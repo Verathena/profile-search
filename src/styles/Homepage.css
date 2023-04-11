@@ -1,0 +1,9 @@
+body{
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 5%;
+    background-image: linear-gradient(#D34B8D, #FF796B, #FFA55B, #FFD467);
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+}

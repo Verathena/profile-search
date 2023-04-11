@@ -1,0 +1,13 @@
+.searchbar--wrap input{
+    font-family: 'Arial';
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 3px;
+    height: 45px;
+    width:100%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border: 1px solid white;
+    font-style: italic;
+    font-size: 16px;
+}
