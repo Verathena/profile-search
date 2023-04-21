@@ -1,18 +1,40 @@
-import React from 'react';
+import React from "react";
 import "../styles/SearchBar.css";
-// import Cards from './Cards';
-// import { profileData } from "./ProfileData";
 
+const SearchBar = ({ userDetails, setSearchQuery }) => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
 
-const SearchBar = () => {
+  const handleSearch = (e) => {
+    if (!e.target.value) {
+      setSearchQuery(userDetails);
+    }
+
+    const filteredData = userDetails.filter(function (data) {
+      return (
+        data.title.toLowerCase().includes(e.target.value.toLowerCase()) ||
+        data.firstName
+          .toLowerCase()
+          .includes(e.target.value.toLowerCase()) ||
+        data.lastName.toLowerCase().includes(e.target.value.toLowerCase())
+      );
+    });
+    setSearchQuery(filteredData);
+  };
 
   return (
-    <div className='searchbar--wrap'>
-        <form>
-            <input type='text' placeholder="Search by name..."/>
-        </form>
+    <div className="searchbar--wrap">
+      <form>
+        <input
+          type="text"
+          placeholder="Search by name..."
+          onChange={handleSearch}
+          onSubmit={handleSubmit}
+        />
+      </form>
     </div>
-  )
-}
+  );
+};
 
-export default SearchBar
+export default SearchBar;
